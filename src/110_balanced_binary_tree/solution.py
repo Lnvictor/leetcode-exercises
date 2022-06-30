@@ -9,19 +9,18 @@ class TreeNode:
 class Solution:
     def isBalanced(self, root: TreeNode) -> bool:
         return self.max_depth(root) is not None
-    
-    def max_depth(self, root:  TreeNode) -> int:
+
+    def max_depth(self, root: TreeNode) -> int:
         if root is None:
             return 0
-        
+
         left_side = self.max_depth(root.left)
         right_side = self.max_depth(root.right)
-       
-                
-        if left_side is None or right_side  is None:
+
+        if left_side is None or right_side is None:
             return None
-        
+
         if abs(left_side - right_side) > 1:
             return None
-        
+
         return max(left_side, right_side) + 1

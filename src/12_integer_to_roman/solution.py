@@ -3,7 +3,7 @@ class Solution:
         """
         Transforms an integer into Roman algarism
         """
-        
+
         algarisms = {
             1000: "M",
             900: "CM",
@@ -17,18 +17,17 @@ class Solution:
             9: "IX",
             5: "V",
             4: "IV",
-            1:"I",
+            1: "I",
         }
-        
-        
-        l =  self.floor_key(num, algarisms)
-        
+
+        l = self.floor_key(num, algarisms)
+
         if num == l:
             return algarisms[num]
-        
-        return algarisms[l] + self.intToRoman(num-l)
-    
+
+        return algarisms[l] + self.intToRoman(num - l)
+
     def floor_key(self, num, d):
         if num in d:
-          return num
+            return num
         return max(k for k in d if k < num)

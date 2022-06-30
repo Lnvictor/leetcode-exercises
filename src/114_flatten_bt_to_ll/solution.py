@@ -13,20 +13,20 @@ class Solution:
         """
         if root == None:
             return
-        
+
         my_stack = []
         my_stack.append(root)
-        
+
         while len(my_stack) > 0:
             curr_node = my_stack.pop()
-            
+
             if curr_node.right is not None:
                 my_stack.append(curr_node.right)
-                
+
             if curr_node.left is not None:
                 my_stack.append(curr_node.left)
-                
+
             if len(my_stack) > 0:
                 curr_node.right = my_stack[-1]
-            
+
             curr_node.left = None

@@ -20,9 +20,9 @@ class Solution:
                 i += 1
             except IndexError:
                 break
-        
+
         return len(nums)
 
 
-if __name__ == '__main__':
-    print(Solution().removeDuplicates([0,0,1,1,1,1,2,3,3]))
+if __name__ == "__main__":
+    print(Solution().removeDuplicates([0, 0, 1, 1, 1, 1, 2, 3, 3]))

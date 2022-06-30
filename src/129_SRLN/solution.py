@@ -12,11 +12,11 @@ class TreeNode:
 class Solution:
     def sumNumbers(self, root: TreeNode) -> int:
         return self.hlp(root)
-    
+
     def hlp(self, root, paths=None):
         if root is None:
             return 0
-        
+
         if paths is None:
             paths = deque()
             paths.append([root.val])
@@ -40,14 +40,14 @@ class Solution:
             result += self.hlp(root.right, paths=r_paths)
 
         return result
-    
+
     def sum_of_paths(self, paths):
         if len(paths) == 1:
             if len(paths[0]) == 1:
                 return paths[0][0]
-        
+
         tot = 0
-    
+
         for path in paths:
             for i in range(len(path)):
                 tot += path[i] * (10 ** (len(path) - (i + 1)))

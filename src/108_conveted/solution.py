@@ -14,8 +14,8 @@ class Solution:
     def sortedArrayToBST(self, nums: List[int]) -> TreeNode:
         if not nums:
             return None
-        
+
         middle = TreeNode(nums[len(nums) // 2])
-        middle.right = self.sortedArrayToBST(nums[len(nums) // 2+1:])
-        middle.left = self.sortedArrayToBST(nums[:len(nums) // 2])
+        middle.right = self.sortedArrayToBST(nums[len(nums) // 2 + 1 :])
+        middle.left = self.sortedArrayToBST(nums[: len(nums) // 2])
         return middle

@@ -1,5 +1,6 @@
 from typing import List
 
+
 class Solution:
     def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
         if not matrix:
@@ -21,7 +22,7 @@ class Solution:
             last = matrix.pop()
             for value in last[::-1]:
                 result.append(value)
-                
+
         if matrix:
             for value in reversed(matrix[1:]):
                 if value:
